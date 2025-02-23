@@ -1,0 +1,20 @@
+declare_args() {
+  mds_logger_args_nums = 7
+}
+
+pkggroup("mds_kernel") {
+}
+
+config("mds_component_logger_config") {
+  include_dirs = [ "inc/" ]
+
+  defines = [ "MDS_LOGGER_ARGS_NUMS=${mds_logger_args_nums}" ]
+}
+
+static_library("mds_component_logger") {
+  sources = [ "src/mds_logger.c" ]
+
+  public_configs = [ ":mds_component_logger_config" ]
+
+  public_deps = [ ":mds_kernel" ]
+}
