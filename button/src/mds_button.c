@@ -186,7 +186,7 @@ MDS_Err_t MDS_BUTTON_DeviceInit(MDS_BUTTON_Device_t *button, const MDS_BUTTON_In
     button->tickCount = 0;
     button->btnLevel = button->init.releasedLevel;
     button->isFaked = false;
-    button->state = MDS_BUTTON_STATE_REPEAT;
+    button->state = MDS_BUTTON_STATE_NONE;
     button->debounceCnt = 0;
     button->repeatCnt = 0;
 
