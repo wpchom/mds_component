@@ -1,0 +1,10 @@
+pkggroup("mds_kernel") {
+}
+
+source_set("mds_topic") {
+  sources = [ "mds_topic.c" ]
+
+  public_deps = [ ":mds_kernel" ]
+
+  public_configs = [ "../../:mds_component_cfg" ]
+}
